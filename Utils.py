@@ -1,10 +1,10 @@
 import random
-def generateNumber(max):
-    return (max-1)*random.random()
+def generateNumber(max, roundToNearest = 1):
+    return (round((max-1)*random.random()/roundToNearest))*roundToNearest
 
-def generateDistinctPair(max):
-    n1 = generateNumber(max)
-    n2 = generateNumber(max)
+def generateDistinctPair(max, roundToNearest = 1):
+    n1 = generateNumber(max, roundToNearest=roundToNearest)
+    n2 = generateNumber(max, roundToNearest=roundToNearest)
     while n2 == n1:
         n2 = generateNumber(max)
     return int(n1), int(n2)
