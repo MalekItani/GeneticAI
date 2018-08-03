@@ -40,9 +40,9 @@ class Snake:
         if dir == 0: # Move forward
             self.coordinates[0] = k[0] + A
         elif dir == 1: # Move right
-            self.coordinates[0] = k[0] + np.flip(A, 0)
+            self.coordinates[0] = k[0] + A.dot(np.array([[0, 1], [-1, 0]]))
         else: # Move left
-            self.coordinates[0] = k[0] + [A[1],-A[0]]
+            self.coordinates[0] = k[0] + A.dot(np.array([[0, -1], [1, 0]]))
 
         for i in range(1, self.size):
             self.coordinates[i] = k[i - 1]

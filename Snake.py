@@ -28,6 +28,7 @@ def drawSnake(snake):
 
 def foo():
     global gen
+    b = -1
     done = False
     nChromosomes = 200
     popSize = 25
@@ -37,21 +38,27 @@ def foo():
     # snake = snakeUtils.Snake(pos=[70, 70], terrain=terrain)
     terrain.addFood([300, 300])
     while not done:
-        # canvas.delete("Snake")
+        canvas.delete("Snake")
+        ############################ UNCOMMENT TO PLAY #####################################
         # genLabel['text'] = "Score: " + str(snake.score)
         # drawSnake(snake)
-        # if keyboard.is_pressed('right'):
+        # if keyboard.is_pressed('right') and b != 0:
+        #     b = 0
         #     snake.move(1)
-        # elif keyboard.is_pressed('left'):
+        # elif keyboard.is_pressed('left') and b != 1:
+        #     b = 1
         #     snake.move(2)
         # elif keyboard.is_pressed('q'):
         #     quit()
         # else:
+        #     b = -1
         #     snake.move(0)
         # sleep(0.1)
         # if not snake.alive:
         #     sleep(3)
         #     snake = snakeUtils.Snake(pos=[70, 70], terrain=terrain)
+        ############################ UNCOMMENT TO PLAY #####################################
+        ############################ Comment out the rest #####################################
         if gen%2 == 0:
             nChromosomes += 50
             for genome in genomes:
