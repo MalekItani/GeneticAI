@@ -29,6 +29,7 @@ def foo():
     start = [75, 300]
     barrier = [[275, 325],[200, 400]]
     genomes = []
+    x = True
     while not done:
         genLabel['text'] = "Generation: " + str(gen)
         for i in range(popSize):
@@ -40,16 +41,17 @@ def foo():
                 pawn = shipUtils.Pawn(pos=np.array(start), size=3)
                 genomes[i].pawn = pawn
         for i in range(size):
-            canvas.delete("pawn")
             for j in range(popSize):
                 Pawn = genomes[j].pawn
                 if Pawn.isAlive:
-                    canvas.create_polygon(Pawn.coordinates, fill="blue", tags=('pawn'))
+                    canvas.create_polygon(Pawn.coordinates, fill="blue", tags=('pawn' + str(x)))
                     Pawn.moveForward(speed=4)
                     Pawn.rotate(genomes[j].path[i])
                     if Pawn.collidesWith(barrier[0], barrier[1]):
                         Pawn.kill()
                     genomes[j].pawn = Pawn
+            x = not x
+            canvas.delete("pawn" + str(x))
             sleep(0.005)
 
         genomes.sort(key=lambda x: x.checkFitness(target))
