@@ -57,7 +57,7 @@ def foo():
         genomes.sort(key=lambda x: x.checkFitness(target))
         aTemp = []
         for i in range(popSize):
-            p1, p2 = Utils.generateDistinctPair(popSize // 2)
+            p1, p2 = Utils.generateDistinctPair(popSize // 3)
             g1 = genomes[p1]
             g2 = genomes[p2]
             if not g1.pawn.isAlive:
