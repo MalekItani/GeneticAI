@@ -1,8 +1,8 @@
 import tkinter as tk
 from threading import Thread
 from time import sleep
-import JumperUtils
-import Utils
+import Utils.JumperUtils as JumperUtils
+import Utils.Utils as Utils
 
 root = tk.Tk()
 root.geometry("600x600")

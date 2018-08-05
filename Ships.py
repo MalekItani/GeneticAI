@@ -3,8 +3,8 @@ from threading import Thread
 from time import sleep
 import random
 import numpy as np
-import shipUtils
-import Utils
+import Utils.shipUtils as shipUtils
+import Utils.Utils as Utils
 
 
 root = tk.Tk()

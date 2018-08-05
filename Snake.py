@@ -3,9 +3,9 @@ from threading import Thread
 from time import sleep
 import random
 import numpy as np
-import shipUtils
-import Utils
-import snakeUtils
+import Utils.shipUtils as shipUtils
+import Utils.Utils as Utils
+import Utils.snakeUtils as snakeUtils
 import keyboard
 
 root = tk.Tk()

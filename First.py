@@ -2,7 +2,7 @@ import tkinter as tk
 from threading import Thread
 from time import sleep
 import random
-import Utils
+import Utils.Utils as Utils
 
 root = tk.Tk()
 root.geometry("400x400")
